@@ -8,11 +8,13 @@ import { MyApp } from './app.component';
 
 // pages
 import { HomePage } from '../pages/home-page/home-page';
+import { CreatePage } from '../pages/create-page/create-page';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    CreatePage
   ],
   imports: [
     BrowserModule,
@@ -21,7 +23,8 @@ import { HomePage } from '../pages/home-page/home-page';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    CreatePage
   ],
   providers: [
     StatusBar,
