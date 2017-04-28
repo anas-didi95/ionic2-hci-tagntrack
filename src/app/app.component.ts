@@ -12,7 +12,7 @@ import { CreatePage } from '../pages/create-page/create-page';
 })
 export class MyApp {
   //rootPage:any = HomePage;
-  rootPage:any = CreatePage;
+  rootPage:any = CreatePage; // development
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
