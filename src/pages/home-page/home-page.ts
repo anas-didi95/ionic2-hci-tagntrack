@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the HomePage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+// pages
+import { CreatePage } from '../create-page/create-page';
+
 @IonicPage()
 @Component({
   selector: 'page-home-page',
@@ -19,6 +16,10 @@ export class HomePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');
+  }
+
+  goToCreatePage() {
+      this.navCtrl.push(CreatePage);
   }
 
 }
