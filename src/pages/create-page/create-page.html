@@ -10,23 +10,23 @@
 
     <ion-item>
       <ion-label floating>Date</ion-label>
-      <ion-input type="text" readonly></ion-input>
+      <ion-input type="text" readonly [value]="date"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating readonly>Title</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="title" autofocus></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating readonly>Budget</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-input type="number" [(ngModel)]="budget"></ion-input>
     </ion-item>
 
   </ion-list>
 
   <ion-item no-lines>
-    <button ion-button large block>Submit</button>
+    <button ion-button large block (click)="createBudget()">Submit</button>
   </ion-item>
 
 </ion-content>
