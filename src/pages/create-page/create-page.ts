@@ -14,11 +14,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CreatePage {
 
+  private date: String;
+  private title: String;
+  private budget: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CreatePage');
+    this.date = new Date().toLocaleDateString();
+  }
+
+  createBudget() {
+    // console.log(this.title+ " " +(parseFloat(this.budget)+2));
   }
 
 }
