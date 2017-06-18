@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the CreatePage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+// pages
+import { ItemsPage } from '../items-page/items-page';
+
 @IonicPage()
 @Component({
   selector: 'page-create-page',
@@ -16,7 +13,7 @@ export class CreatePage {
 
   private date: String;
   private title: String;
-  private budget: any;
+  private budget: Number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -27,7 +24,11 @@ export class CreatePage {
   }
 
   createBudget() {
-    // console.log(this.title+ " " +(parseFloat(this.budget)+2));
+    this.navCtrl.push(ItemsPage, {
+      date: this.date,
+      title: this.title,
+      budget: this.budget
+    })
   }
 
 }

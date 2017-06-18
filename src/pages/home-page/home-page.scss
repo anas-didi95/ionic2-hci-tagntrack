@@ -41,6 +41,11 @@ page-home-page {
         color: color($colors, create, contrast);
     }
 
+    .about {
+        background-color: color($colors, about, base);
+        color: color($colors, about, contrast);
+    }
+
     .center {
         display: flex;
         align-items: center;

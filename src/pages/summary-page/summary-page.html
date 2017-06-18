@@ -1,0 +1,80 @@
+<ion-header>
+
+  <ion-navbar color="create">
+    <ion-title>Summary</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list no-lines>
+    <ion-item>
+      <ion-label stacked>Date</ion-label>
+      <ion-input type="text" [value]="date" readonly></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Title</ion-label>
+      <ion-input type="text" [value]="title" readonly></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Budget (RM)</ion-label>
+      <ion-input type="text" [value]="budget" readonly></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <hr />
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-1><b>#</b></ion-col>
+      <ion-col col-3><b>Item</b></ion-col>
+      <ion-col col-3 text-right><b>Price (RM)</b></ion-col>
+      <ion-col col-2 text-right><b>Qty</b></ion-col>
+      <ion-col col-3 text-right><b>Total (RM)</b></ion-col>
+    </ion-row>
+    <ion-row *ngFor="let item of items; let i = index">
+      <ion-col col-1>{{ i+1 }}</ion-col>
+      <ion-col col-3>{{ item.name }}</ion-col>
+      <ion-col col-3 text-right>{{ item.price | number:"1.2-2" }}</ion-col>
+      <ion-col col-2 text-right>{{ item.quantity }}</ion-col>
+      <ion-col col-3 text-right>{{ item.total | number:"1.2-2" }}</ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col offset-9 col-3 text-right *ngIf="balance < 0" style="color: red">
+          <hr />
+          <b>{{ balance | number:"1.2-2" }}</b>
+          <hr />
+        </ion-col>
+        <ion-col offset-9 col-3 text-right *ngIf="balance >= 0" style="color: green">
+          <hr />
+          <b>{{ balance | number:"1.2-2" }}</b>
+          <hr />
+        </ion-col>
+    </ion-row>
+    <!--ion-row>
+      <ion-col col-1>1</ion-col>
+      <ion-col col-5>Mile</ion-col>
+      <ion-col col-3 text-right>3</ion-col>
+      <ion-col col-3 text-right>10.23</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-1>1</ion-col>
+      <ion-col col-5>Mile</ion-col>
+      <ion-col col-3 text-right>3</ion-col>
+      <ion-col col-3 text-right>10.23</ion-col>
+    </ion-row-->
+  </ion-grid>
+
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="create">
+    <ion-buttons text-center>
+      <button ion-button full (click)="goToMainMenu()">Go Back To Main Menu</button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
